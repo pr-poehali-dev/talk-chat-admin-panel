@@ -1,0 +1,32 @@
+{
+  "tests": [
+    {
+      "name": "Send verification code",
+      "method": "POST",
+      "path": "/?action=send-code",
+      "body": {
+        "email": "test@example.com"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login returns token",
+      "method": "POST",
+      "path": "/?action=login",
+      "body": {
+        "username": "debvlel",
+        "password": "admin123"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "token": "string",
+        "user_id": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
